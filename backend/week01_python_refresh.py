@@ -70,3 +70,64 @@ def search_courses(keyword):
             results.append(course)
     return results
 print(search_courses("web"))
+
+
+def find_student(student_id):
+    for student in students:
+        if student["id"] == student_id:
+            return student
+    return None
+
+
+def enroll_student(student_id, course_code):
+    # Kiểm tra sinh viên tồn tại
+    student = find_student(student_id)
+
+    if student is None:
+        return False, "Sinh vien khong ton tai"
+
+    # Kiểm tra học phần tồn tại
+    course = find_course(course_code)
+
+    if course is None:
+        return False, "Hoc phan khong ton tai"
+
+    # Kiểm tra lớp còn chỗ
+    if course["enrolled"] >= course["capacity"]:
+        return False, "Lop da du so luong"
+
+    # Kiểm tra đăng ký trùng
+    duplicated = any(
+        item["student_id"] == student_id
+        and item["course_code"] == course_code
+        for item in enrollments
+    )
+
+    if duplicated:
+        return False, "Sinh vien da dang ky hoc phan nay"
+
+    # Đăng ký thành công
+    enrollments.append({
+        "student_id": student_id,
+        "course_code": course_code
+    })
+
+    course["enrolled"] += 1
+
+    return True, "Dang ky thanh cong"
+
+
+print(" TEST 1: DANG KY THANH CONG")
+print(enroll_student("22000002", "INT2204"))
+
+print("\n TEST 2: DANG KY TRUNG")
+print(enroll_student("22000002", "INT2204"))
+
+print("\nTEST 3: LOP DAY")
+print(enroll_student("22000002", "INT2205"))
+
+print("\nTEST 4: HOC PHAN KHONG TON TAI")
+print(enroll_student("22000002", "INT9999"))
+
+print("\nTEST 5: SINH VIEN KHONG TON TAI")
+print(enroll_student("99999999", "INT2204"))
