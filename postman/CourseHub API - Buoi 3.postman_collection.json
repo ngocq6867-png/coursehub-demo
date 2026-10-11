@@ -1,0 +1,120 @@
+{
+  "info": {
+    "_postman_id": "6b299a51-2699-4414-add9-7b0900c76937",
+    "name": "CourseHub API - Buoi 3",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57454736"
+  },
+  "item": [
+    {
+      "name": "01 - Health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "02 - List courses",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "03 - Search courses",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "04 - Course detail",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "05 - Available sections",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "06 - Student enrollments",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "07 - Create enrollment",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "08 - Duplicate enrollment",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "09 - Invalid enrollment",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "10 - Delete enrollment",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    }
+  ]
+}
