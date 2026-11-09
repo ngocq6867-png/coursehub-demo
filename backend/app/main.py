@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException, Query, Response, status
 from sqlalchemy import text
 from sqlalchemy.exc import IntegrityError, SQLAlchemyError
+from fastapi.middleware.cors import CORSMiddleware
 
 from backend.app.database import engine
 from backend.app.schemas import EnrollmentCreate
@@ -11,6 +12,16 @@ app = FastAPI(
     description="API thuc hanh Buoi 4 - transaction, locking va hieu nang",
 )
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+    ],
+    allow_credentials=False,
+    allow_methods=["GET", "POST", "DELETE"],
+    allow_headers=["Content-Type"],
+)
 
 @app.get("/")
 def root():
