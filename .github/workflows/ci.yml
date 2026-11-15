@@ -28,7 +28,7 @@ jobs:
         run: python -m compileall backend
 
       - name: Test backend contract
-        run: pytest backend/tests -q
+        run: python -m pytest backend/tests -q
 
   frontend:
     runs-on: ubuntu-latest
