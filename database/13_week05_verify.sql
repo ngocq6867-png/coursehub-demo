@@ -1,0 +1,23 @@
+-- Week 5: Verify React - FastAPI - PostgreSQL
+
+-- 1. Kiem tra so cho
+SELECT class_id, capacity, enrolled, remaining
+FROM v_section_summary
+WHERE class_id IN ('WEB-01', 'RACE-01')
+ORDER BY class_id;
+
+-- 2. Kiem tra dang ky sinh vien
+SELECT student_id, class_section_id
+FROM enrollments
+WHERE student_id = '22000004'
+ORDER BY class_section_id;
+
+-- 3. Kiem tra lich su dang ky/huy
+SELECT id, student_id, class_section_id,
+       event_type, occurred_at
+FROM enrollment_events
+WHERE dataset = 'demo'
+  AND student_id = '22000004'
+  AND class_section_id = 'WEB-01'
+ORDER BY id DESC
+LIMIT 10;
